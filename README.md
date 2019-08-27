@@ -1,4 +1,16 @@
 # spring_web
+
+---
+
+- 목차
+  - 설정
+    - jdk설치
+    - tomcat8설치
+    - sts3설치
+    - db설치
+  - 시작
+  - 출처
+
 ---
 
 - 설정
@@ -34,6 +46,32 @@
 
    1. https://spring.io/tools3/sts/all
 
+   
+
+4. **DB설정(Mac 기준) oracle-xe-11g, SQL Developer 설치**
+
+   1. docker사용
+
+      1. Oracle-xe-11g설치
+
+         | 1    | docker pull deepdiver/docker-oracle-xe-11g                   | deepdiver의 oracle 11g 이미지를 받아옴 |
+         | ---- | ------------------------------------------------------------ | -------------------------------------- |
+         | 2    | docker run -d -p 49160:22 -p 49161:1521 deepdiver/docker-oracle-xe-11g | 이미지를 컨테이너로 생성한 뒤 실행     |
+         | 3    | docker ps                                                    | 컨테이너 목록을 출력                   |
+
+      2. Sql developer 설치
+
+         1. https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
+         2. 연두 십자를 눌러서 새로운 커넥션 연결
+
+         | Name : localhost  |
+         | ----------------- |
+         | Username : system |
+         | Password : oracle |
+         | port : 49161      |
+
+      
+
 ---
 
 - 시작하기
@@ -57,7 +95,8 @@
 
 ---
 
-참고한 사이트
+출처
 
 1. https://clearstar0817.tistory.com/9
 
+2. https://clearstar0817.tistory.com/10?category=707475
