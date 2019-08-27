@@ -54,23 +54,27 @@
 
       1. Oracle-xe-11g설치
 
-         | 1    | docker pull deepdiver/docker-oracle-xe-11g                   | deepdiver의 oracle 11g 이미지를 받아옴 |
-         | ---- | ------------------------------------------------------------ | -------------------------------------- |
-         | 2    | docker run -d -p 49160:22 -p 49161:1521 deepdiver/docker-oracle-xe-11g | 이미지를 컨테이너로 생성한 뒤 실행     |
-         | 3    | docker ps                                                    | 컨테이너 목록을 출력                   |
+         |  1   | docker pull deepdiver/docker-oracle-xe-11g                   | deepdiver의 oracle 11g 이미지를 받아옴                       |
+         | :--: | ------------------------------------------------------------ | ------------------------------------------------------------ |
+         |  2   | docker run -d -p 49160:22 -p 49161:1521 deepdiver/docker-oracle-xe-11g | 이미지를 컨테이너로 생성한 뒤 실행                           |
+         | 2-2  | docker run --name <사용자 지정 이름> -d -p 49160:22 -p 49161:1521 -v <디렉토리 경로> deepdiver/docker-oracle-xe-11g | 2는 휘발성으로 재시작하면 사라지므로 사용자 지정 이름을 통해 호출과 저장을 한다. |
+   | 2-3  | docker start <사용자 지정 이름>                              | 실행시에는 사용자 지정 이름을 통해 실행을 한다.              |
+         |  3   | docker ps                                                    | 컨테이너 목록을 출력                                         |
 
       2. Sql developer 설치
-
-         1. https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
+      
+   1. https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
          2. 연두 십자를 눌러서 새로운 커넥션 연결
-
+      
          | Name : localhost  |
          | ----------------- |
          | Username : system |
-         | Password : oracle |
+   | Password : oracle |
          | port : 49161      |
-
-      
+         
+         3. docker의 oracle 직접 접속방법
+            1. docker exe -it <사용자 지정 이름> sqlplus
+            2. 비밀번호 변경을 한다.
 
 ---
 
